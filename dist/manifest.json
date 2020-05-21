@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "腾讯视频签到",
+  "version": "1.0",
+  "description": "打开腾讯视频自动完成会员签到任务!",
+  "browser_action": {
+    "default_icon": "img/icon.webp",
+    "default_title": "签到",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage", 
+    "cookies",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "*://v.qq.com/*",
+    "contextMenus"
+  ],
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://v.qq.com/*",
+        "https://v.qq.com/*"
+      ],
+      "js": [ "js/background.js" ],
+      "css": ["css/tia.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "homepage_url": "https://www.qiatia.cn"
+}

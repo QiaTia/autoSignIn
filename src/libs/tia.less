@@ -1,0 +1,71 @@
+@TiColor: #353535;
+@DescColor: #888;
+@select: #42b983;
+@bgColor: #e9e9e9;
+
+div.tia-toast {
+  width: 100%;
+  z-index: 1024;
+  transition: all .3s ease;
+  background-color: @TiColor;
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  color: @bgColor;
+  display: flex;
+  overflow: hidden;
+  p{
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    padding: 10px 16px;
+  }
+  .tia-icon{
+    margin: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 26px;
+      height: 26px;
+      fill: @bgColor;
+    }
+    &.load{
+      animation: tia-rotate 1.6s linear infinite;
+    }
+  }
+  span{
+    background-color: transparent;
+    line-height: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: @select;
+    padding: 0 12px;
+    &:hover{
+      opacity: .9;
+    }
+  }
+}
+@keyframes tia-rotate{
+  0%{
+    transform: rotateZ(0deg)
+  }
+  50%{
+    transform: rotateZ(180deg)
+  }
+  100%{
+    transform: rotateZ(360deg)
+  }
+}
+@media (min-width:600px) {
+  div.tia-toast {
+    border-radius: 6px;    
+    width: 500px;
+    left: calc(50% - 250px);
+    p{
+      padding: 10px;
+    }
+  }
+}

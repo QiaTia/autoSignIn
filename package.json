@@ -1,0 +1,25 @@
+{
+  "name": "auto_sgin",
+  "version": "1.0.0",
+  "description": "腾讯视频会员自动签到项目",
+  "main": "src/index.js",
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "css-loader": "^3.5.3",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "css": "lessc src/index.less dist/css/index.css",
+    "build": "webpack --mode=production -p --config webpack.config"
+  },
+  "author": "QiaTia",
+  "license": "ISC"
+}
